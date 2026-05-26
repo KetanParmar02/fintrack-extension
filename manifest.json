@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "FinTrack - Portfolio Tracker",
+  "version": "1.0.0",
+  "description": "Track your stocks, mutual funds, crypto & investments",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "FinTrack"
+  }
+}
