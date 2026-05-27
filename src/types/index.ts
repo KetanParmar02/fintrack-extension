@@ -13,7 +13,10 @@ export interface Holding {
 
 export interface Portfolio {
   id?: string;
-  name: string;
-  total_value?: number;
   user_id?: string;
+  name: string;
+  description?: string;        // ← Yeh line add kar do (optional)
+  currency?: string;
+  created_at?: string;
+  updated_at?: string;
 }
