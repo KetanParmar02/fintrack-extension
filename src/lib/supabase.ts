@@ -3,8 +3,10 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = 'https://lffdhbknxygetngzzdq.supabase.co'
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxmZmRmaGJrbnh5Z2V0bmd6emRxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk2NDkxNzMsImV4cCI6MjA5NTIyNTE3M30.KSngIicxjjqotLZvwNQPZkQbEzLOD7nyZ3aVBiIljUU'
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase credentials')
-}
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: false,
+  }
+})
